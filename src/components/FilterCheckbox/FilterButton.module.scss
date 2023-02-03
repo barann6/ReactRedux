@@ -1,0 +1,21 @@
+.filterButton {
+  display: block;
+  padding: 0 0 0 50px;
+  font: {
+    weight: 400;
+    size: 13px;
+  }
+  line-height: 40px;
+  background: {
+    position: 20px center;
+    repeat: no-repeat;
+    image: url('../../images/checkbox\ 0.svg');
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #f1fcff;
+  }
+  input:checked + & {
+    background-image: url('../../images/checkbox\ 1.svg');
+  }
+}
