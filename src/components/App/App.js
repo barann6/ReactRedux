@@ -4,12 +4,12 @@ import classes from './App.module.scss';
 import Logo from '../Logo/Logo';
 import Filters from '../Filters/Filters';
 import TabsPanel from '../TabsPanel/TabsPanel';
-import Loader from '../Loader/Loader';
+import LoadBar from '../LoadBar/LoadBar';
 import TicketsList from '../TicketsList/TicketsList';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 function App({ fetchError, loading }) {
-  const displayLoader = loading ? <Loader /> : null;
+  const displayLoadBar = loading ? <LoadBar /> : null;
   const displayErrorMessage = fetchError ? <ErrorMessage /> : null;
   return (
     <>
@@ -20,7 +20,7 @@ function App({ fetchError, loading }) {
         <Filters />
         <div>
           <TabsPanel />
-          {displayLoader}
+          {displayLoadBar}
           {displayErrorMessage}
           <TicketsList />
         </div>

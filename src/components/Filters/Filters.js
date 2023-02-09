@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import classes from './Filters.module.scss';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
-import { filtersNames, switchFilter } from '../../actions';
-const { SHOW_ALL, SHOW_ZERO, SHOW_ONE, SHOW_TWO, SHOW_THRE } = filtersNames;
+import { filtersNames, switchFilter } from '../../store/actions';
+const { all, zero, one, two, thre } = filtersNames;
 
 function Filters({
   all,
@@ -77,11 +77,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   const switchHandler = bindActionCreators(switchFilter, dispatch);
   return {
-    switchAll: () => switchHandler(SHOW_ALL),
-    switchZero: () => switchHandler(SHOW_ZERO),
-    switchOne: () => switchHandler(SHOW_ONE),
-    switchTwo: () => switchHandler(SHOW_TWO),
-    switchThre: () => switchHandler(SHOW_THRE),
+    switchAll: () => switchHandler(all),
+    switchZero: () => switchHandler(zero),
+    switchOne: () => switchHandler(one),
+    switchTwo: () => switchHandler(two),
+    switchThre: () => switchHandler(thre),
   };
 };
 

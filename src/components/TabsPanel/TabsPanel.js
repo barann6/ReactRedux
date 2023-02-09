@@ -3,8 +3,8 @@ import { bindActionCreators } from 'redux';
 
 import classes from './TabsPanel.module.scss';
 import Tab from '../Tab/Tab';
-import { tabsNames, toggleTab } from '../../actions';
-const { SHOW_CHEAPER, SHOW_FASTER, SHOW_OPTIMAL } = tabsNames;
+import { tabsNames, toggleTab } from '../../store/actions';
+const { cheaper, faster } = tabsNames;
 
 function TabsPanel({ currentTab, showCheaper, showFaster, SHOWOptimal }) {
   return (
@@ -35,8 +35,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   const togglehHandler = bindActionCreators(toggleTab, dispatch);
   return {
-    showCheaper: () => togglehHandler(SHOW_CHEAPER),
-    showFaster: () => togglehHandler(SHOW_FASTER),
+    showCheaper: () => togglehHandler(cheaper),
+    showFaster: () => togglehHandler(faster),
   };
 };
 

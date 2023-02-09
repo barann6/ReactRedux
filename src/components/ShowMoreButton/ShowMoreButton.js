@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import classes from './ShowMoreButton.module.scss';
-import { showMoreTickets } from '../../actions';
+import { showMoreTickets } from '../../store/actions';
 
 function ShowMoreButton({ clickHandler }) {
   return (
